@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<main role="main" class="inner cover">
+    <h1 class="cover-heading">YouTube Video Downloader</h1>
+    <p class="lead">The Slowest YouTube Video Downloader Ever</p>
+    <p class="lead">
+        <form action="/" method="post" >
+            <input type="text" class="form-control" placeholder="Enter video url here" name="url">
+            <select name='opt'>
+                <option value='audio_mp4a'>Audio</option>
+                <option value='best'>Video</option>
+            </select>
+            <button type="submit" class="btn btn-success mt-3">Download</button>
+        </form>
+    </p>
+    <div class="alert alert-danger" role="alert" id="error-lol" style="visibility:{{error_or_not}};">
+        Please enter a valid URL or non-copyrighted video URL
+    </div>
+</main>
+
+{% endblock %}
